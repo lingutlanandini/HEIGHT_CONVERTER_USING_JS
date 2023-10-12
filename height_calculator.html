@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>height calculator</title>
+<style>
+    #container {
+width: 375px;
+height: 425px;
+margin-left: 350px;
+margin-top: 65px;
+background-color: #000;
+padding-left: 30px;
+color: #fff;
+margin: 0 auto;
+box-shadow: 6px 2px 6px 1px rgb(26, 25, 25);
+
+
+}
+#feet {
+width: 80%;
+height: 25px;
+margin-top: 30px;
+margin-left: 15px;
+}
+#inches {
+width: 80%;
+height: 25px;
+margin-top: 30px;
+}
+#result {
+font-size: 35px;
+
+color: yellow;
+text-align: center;
+
+}
+#submit {
+width: 250px;
+height: 35px;
+margin-left: 60px;
+margin-top: 55px;
+border-radius: 5px;
+border-style: none;
+background-color: blue;
+color: #fff;
+font-size: 25px;
+
+}
+h1 {
+padding-left: 15px;
+padding-top: 25px;
+}
+</style>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Height Converter</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+<div id="container">
+<h1 style="text-align: center;">Height Converter</h1>
+Feet
+<input type="text" id="feet" /> <br />
+Inches
+<input type="text" id="inches" /> <br />
+<input type="submit" id="submit" value="Convert to cm" /> <br /><br />
+<div id="result"></div>
+</div>
+
+</body>
+</html>
+<!-- partial -->
+<script>
+    //BMI = KG / (H/100 * H/100)
+document.getElementById("submit").addEventListener("click", heightConverter);
+function heightConverter(){
+var feet = parseInt(document.getElementById("feet").value *12);
+var inches = parseInt(document.getElementById("inches").value);
+var cm = (feet + inches) *2.54;
+var n = cm.toFixed(0);
+document.getElementById("result").innerHTML = n;
+}
+</script>
+
+</body>
+</html>
